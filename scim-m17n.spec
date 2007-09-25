@@ -21,7 +21,7 @@ Requires:			m17n-lib >= %{m17n_lib_version}
 Requires:			scim >= %{scim_version}
 BuildRequires:		m17n-lib-devel >= %{m17n_lib_version}
 BuildRequires:		scim-devel >= %{scim_version}
-BuildRequires:		automake1.8, libltdl-devel
+BuildRequires:		automake, libltdl-devel
 
 %description
 A wrapper for m17n.
@@ -38,11 +38,9 @@ Scim-m17n library.
 
 %prep
 %setup -q
-cp /usr/share/automake-1.9/mkinstalldirs .
 
 %build
-[[ ! -x configure ]] && ./bootstrap
-
+./bootstrap
 %configure2_5x --disable-static
 %make
 
@@ -51,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 # remove unneeded files
-rm -f %{buildroot}/%{_libdir}/scim-1.0/*/IMEngine/*.{a,la}
+rm -f %{buildroot}%scim_plugins_dir/IMEngine/*.{a,la}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,6 +66,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %{libname}
 %defattr(-,root,root)
 %doc COPYING
-%{_libdir}/scim-1.0/*/IMEngine/*.so
-
-
+%scim_plugins_dir/IMEngine/*.so
