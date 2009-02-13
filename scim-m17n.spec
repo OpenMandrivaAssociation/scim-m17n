@@ -13,7 +13,7 @@ URL:		http://sourceforge.net/projects/scim/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		scim-m17n-0.2.2-gcc4.3-patch
 Requires:	m17n-lib >= %{m17n_lib_version}
-Requires:	scim >= %{scim_version}
+Requires:	scim-client = %{scim_api}
 BuildRequires:	m17n-lib-devel >= %{m17n_lib_version}
 BuildRequires:	scim-devel >= %{scim_version}
 BuildRequires:	automake, libltdl-devel
