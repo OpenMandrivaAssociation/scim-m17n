@@ -1,4 +1,4 @@
-%define version	0.2.2
+%define version	0.2.3
 
 %define scim_version		1.4.5
 %define m17n_lib_version	1.3.0
@@ -6,17 +6,15 @@
 Summary:	A wrapper for m17n
 Name:		scim-m17n
 Version:	%{version}
-Release:	%mkrel 4
+Release:	%mkrel 1
 Group:		System/Internationalization
 License:	GPL
 URL:		http://sourceforge.net/projects/scim/
-Source0:	%{name}-%{version}.tar.bz2
-Patch0:		scim-m17n-0.2.2-gcc4.3-patch
+Source0:	http://freefr.dl.sourceforge.net/sourceforge/scim/%name-%version.tar.gz
 Requires:	m17n-lib >= %{m17n_lib_version}
 Requires:	scim-client = %{scim_api}
 BuildRequires:	m17n-lib-devel >= %{m17n_lib_version}
 BuildRequires:	scim-devel >= %{scim_version}
-BuildRequires:	automake, libltdl-devel
 Obsoletes:	%mklibname %name 0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 
@@ -25,10 +23,8 @@ A wrapper for m17n.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
-./bootstrap
 %configure2_5x --disable-static
 %make
 
