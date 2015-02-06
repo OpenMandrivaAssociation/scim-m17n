@@ -6,7 +6,7 @@
 Summary:	A wrapper for m17n
 Name:		scim-m17n
 Version:	%{version}
-Release:	%mkrel 3
+Release:	4
 Group:		System/Internationalization
 License:	GPL
 URL:		http://sourceforge.net/projects/scim/
