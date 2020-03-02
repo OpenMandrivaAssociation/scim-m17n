@@ -6,7 +6,7 @@
 Summary:	A wrapper for m17n
 Name:		scim-m17n
 Version:	%{version}
-Release:	4
+Release:	5
 Group:		System/Internationalization
 License:	GPL
 URL:		http://sourceforge.net/projects/scim/
@@ -25,12 +25,12 @@ A wrapper for m17n.
 %setup -q
 
 %build
-%configure2_5x --disable-static
-%make
+%configure --disable-static
+%make_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
+%make_install
 
 # remove unneeded files
 rm -f %{buildroot}%scim_plugins_dir/IMEngine/*.{a,la}
