@@ -9,7 +9,7 @@ Version:	%{version}
 Release:	5
 Group:		System/Internationalization
 License:	GPL
-URL:		http://sourceforge.net/projects/scim/
+URL:		https://sourceforge.net/projects/scim/
 Source0:	http://freefr.dl.sourceforge.net/sourceforge/scim/%name-%version.tar.gz
 Requires:	m17n-lib >= %{m17n_lib_version}
 Requires:	scim-client = %{scim_api}
